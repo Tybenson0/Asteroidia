@@ -15,5 +15,7 @@
 
     <h2>Confusion Matrix</h2>
     <pre>{{ evaluation_results.Confusion_Matrix | safe }}</pre>
+    <div></div>
+    <img src="data:image/png;base64,{{ confusion_matrix_image }}" alt="Confusion Matrix">
 </body>
 </html>

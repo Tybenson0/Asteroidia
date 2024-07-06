@@ -8,8 +8,6 @@
 
     <form method="post" action="{% url 'predictions' %}">
         {% csrf_token %}
-        <label for="absolute_magnitude">Absolute Magnitude:</label>
-        <input type="number" id="absolute_magnitude" name="absolute_magnitude" step="any" required><br><br>
 
         <label for="estimated_diameter_min">Estimated Diameter Min (km):</label>
         <input type="number" id="estimated_diameter_min" name="estimated_diameter_min" step="any" required><br><br>
