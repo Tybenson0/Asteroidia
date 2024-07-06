@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Hazardous Asteroids</title>
+</head>
+<body>
+    <h1>Predict Hazardous Asteroids</h1>
+
+    <form method="post" action="{% url 'predictions' %}">
+        {% csrf_token %}
+        <label for="absolute_magnitude">Absolute Magnitude:</label>
+        <input type="number" id="absolute_magnitude" name="absolute_magnitude" step="any" required><br><br>
+
+        <label for="estimated_diameter_min">Estimated Diameter Min (km):</label>
+        <input type="number" id="estimated_diameter_min" name="estimated_diameter_min" step="any" required><br><br>
+
+        <label for="estimated_diameter_max">Estimated Diameter Max (km):</label>
+        <input type="number" id="estimated_diameter_max" name="estimated_diameter_max" step="any" required><br><br>
+
+         <label for="miss_distance_1">Miss Distance 1 (km):</label>
+    <input type="number" id="miss_distance_1" name="miss_distance_1" step="any" required><br><br>
+
+    <label for="miss_distance_2">Miss Distance 2 (km):</label>
+    <input type="number" id="miss_distance_2" name="miss_distance_2" step="any" required><br><br>
+
+    <label for="miss_distance_3">Miss Distance 3 (km):</label>
+    <input type="number" id="miss_distance_3" name="miss_distance_3" step="any" required><br><br>
+
+    <label for="miss_distance_4">Miss Distance 4 (km):</label>
+    <input type="number" id="miss_distance_4" name="miss_distance_4" step="any" required><br><br>
+
+    <label for="miss_distance_5">Miss Distance 5 (km):</label>
+    <input type="number" id="miss_distance_5" name="miss_distance_5" step="any" required><br><br>
+
+    <label for="miss_distance_6">Miss Distance 6 (km):</label>
+    <input type="number" id="miss_distance_6" name="miss_distance_6" step="any" required><br><br>
+
+    <label for="miss_distance_7">Miss Distance 7 (km):</label>
+    <input type="number" id="miss_distance_7" name="miss_distance_7" step="any" required><br><br>
+
+    <label for="miss_distance_8">Miss Distance 8 (km):</label>
+    <input type="number" id="miss_distance_8" name="miss_distance_8" step="any" required><br><br>
+
+    <label for="miss_distance_9">Miss Distance 9 (km):</label>
+    <input type="number" id="miss_distance_9" name="miss_distance_9" step="any" required><br><br>
+
+    <label for="miss_distance_10">Miss Distance 10 (km):</label>
+    <input type="number" id="miss_distance_10" name="miss_distance_10" step="any" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {{prediction}}
+
+
+
+</body>
+</html>

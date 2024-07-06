@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+<div></div>
+        <h1>NEO Model Evaluation Results</h1>
+
+    <h2>Accuracy</h2>
+    <p>{{ evaluation_results.Accuracy }}</p>
+
+    <h2>Classification Report</h2>
+    <pre>{{ evaluation_results.Classification_Report | safe }}</pre>
+
+    <h2>Confusion Matrix</h2>
+    <pre>{{ evaluation_results.Confusion_Matrix | safe }}</pre>
+</body>
+</html>
