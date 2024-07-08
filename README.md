@@ -106,26 +106,28 @@ Test out the code for yourself and leave any recomendations!
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-*1.  open your IDE/code editor and open the terminal to location you wish to clone the project
+  1.  open your IDE/code editor and open the terminal to location you wish to clone the project
   <br />
-  *2. Clone Repository to location of your choice
+  2. Clone Repository to location of your choice
   ```sh
   git clone https://github.com/Tybenson0/Asteroidia.git
   ```
-  *3.  Move into the directory/folder Asteroidia/mysite
+  3.  Move into the directory/folder Asteroidia/mysite
   ```sh
   cd Asteroidia/mysite
   ```
-  *4.  Install Dependencies
+  4.  Install Dependencies
   ```sh
   pip install django numpy pandas scikit-learn tensorflow keras matplotlib
   ```
-  *5.  Run the App
+  5.  Run the App
   ```sh
   python manage.py runserver
   ```
-  *6. Paste in your browser: http://127.0.0.1:8000/
-
+  6. Paste in your browser: http://127.0.0.1:8000/
+  <br />
+  7. You should now be on the main page. From the main page you can go to the predictions page which has fields for you to fill out to predict if an asteroid is hazardous or not. You may also go to the model testing &
+     accuracy page which displays the visuals for the model and data along with the calculated accuracy metric. Lastly there is a link to the raw data allowing you to view the raw jason data from the NASA NEOWs yourself.
 
 
 <br />
