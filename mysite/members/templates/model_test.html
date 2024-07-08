@@ -1,21 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}"> <!-- Correct path to your CSS file -->
+</head>
 <body>
-
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
-<div></div>
+<img class="stars_background" src="{% static 'Stars-bg-desktop.svg' %}" alt="stars">
+<div class="welcome_container">
+    <div class="flex-container">
         <h1>NEO Model Evaluation Results</h1>
 
-    <h2>Accuracy</h2>
-    <p>{{ evaluation_results.Accuracy }}</p>
 
-    <h2>Classification Report</h2>
-    <pre>{{ evaluation_results.Classification_Report | safe }}</pre>
+        <h2>Accuracy</h2>
+        <p>{{ evaluation_results.Accuracy }}</p>
 
-    <h2>Confusion Matrix</h2>
-    <pre>{{ evaluation_results.Confusion_Matrix | safe }}</pre>
-    <div></div>
-    <img src="data:image/png;base64,{{ confusion_matrix_image }}" alt="Confusion Matrix">
+
+        <h2>Classification Report</h2>
+        <pre>{{ evaluation_results.Classification_Report | safe }}</pre>
+
+
+        <h2>Confusion Matrix</h2>
+        <pre>{{ evaluation_results.Confusion_Matrix | safe }}</pre>
+        <div></div>
+        <img src="data:image/png;base64,{{ confusion_matrix_image }}" alt="Confusion Matrix">
+
+        <div class="flex-container2">
+            <a href="{% url 'predictions' %}">Make a prediction.</a>
+            <a href="{% url 'model_testing' %}">Model Accuracy and Visuals</a>
+            <a href="{% url 'raw_data' %}">Raw Data</a>
+        </div>
+    </div>
+
+    <div class="Earth-Container">
+        <img class="Earth" src="{% static 'planet-3.svg' %}" alt="Earth">
+        <img class="Satellite" src="{% static 'satellite-svgrepo-com.svg' %}" alt="Satellite">
+        <img class="Asteroid" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
+        <img class="Asteroid_2" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
+        <img class="Asteroid_3" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
+        <img class="Asteroid_4" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
+    </div>
+    <!-- <a href="{% url 'predictions' %}">Hello World!</a> -->
+</div>
+
 </body>
 </html>

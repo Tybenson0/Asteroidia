@@ -4,41 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predict Hazardous Asteroids</title>
+    <title>Your Page Title</title>
     <link rel="stylesheet" href="{% static 'main.css' %}"> <!-- Correct path to your CSS file -->
 </head>
 <body>
 <img class="stars_background" src="{% static 'Stars-bg-desktop.svg' %}" alt="stars">
 <div class="welcome_container">
     <div class="flex-container">
-        <h1>Predict Hazardous Asteroids</h1>
-
-        <form method="post" action="{% url 'predictions' %}">
-           {% csrf_token %}
-
-
-           <label for="estimated_diameter_min">Estimated Diameter Min (km):</label>
-           <input type="number" id="estimated_diameter_min" name="estimated_diameter_min" step="any" required><br><br>
-
-
-           <label for="estimated_diameter_max">Estimated Diameter Max (km):</label>
-           <input type="number" id="estimated_diameter_max" name="estimated_diameter_max" step="any" required><br><br>
-
-
-           <label for="closest_approach_velocity">Closest Approach Velocity (km/s):</label>
-           <input type="number" id="closest_approach_velocity" name="closest_approach_velocity" step="any" required><br><br>
-
-
-           <div class="flex-container2 button-container"><button type="submit">Predict</button></div>
-        </form>
-
-
-        {% if prediction %}
-           <h2>Prediction Result: {{ prediction|first }}</h2>
-        {% endif %}
+        <h1 class="main-title">ASTEROIDIA</h1>
+        <h2 class="main-title">Asteroid hazard prediction application using machine learning.</h2>
+        <h3 class="main-title">Tyler Benson - 011647231</h3>
 
         <div class="flex-container2">
-            <a href="{% url 'main' %}">Back to Main Page</a>
+            <a href="{% url 'predictions' %}">Make a prediction.</a>
             <a href="{% url 'model_testing' %}">Model Accuracy and Visuals</a>
             <a href="{% url 'raw_data' %}">Raw Data</a>
         </div>

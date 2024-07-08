@@ -41,7 +41,10 @@ def predictions(request):
             return JsonResponse({'error': str(e)}, status=500)
     return render(request, 'prediction.html')
 
+
 plt.switch_backend('agg')
+
+
 def model_testing(request):
     try:
         # Prepare evaluation results for display
@@ -77,3 +80,16 @@ def model_testing(request):
 
     except requests.exceptions.RequestException as e:
         return render(request, 'error.html', {'error_message': str(e)})
+
+
+def main(request):
+    return render(request, 'main.html')
+
+def raw_data(request):
+    response = requests.get(asteroids_neows)
+
+    if response.status_code == 200:
+        data = response.json()  # Parse the JSON data from the response
+        return JsonResponse(data)  # Return the data as a JSON response
+    else:
+        return JsonResponse({'error': 'Failed to retrieve data'}, status=response.status_code)
