@@ -114,7 +114,7 @@ Test out the code for yourself and leave any recomendations!
   ```
   *3.  Move into the directory/folder Asteroidia/mysite
   ```sh
-  cd asteroida/mysite
+  cd Asteroidia/mysite
   ```
   *4.  Install Dependencies
   ```sh
