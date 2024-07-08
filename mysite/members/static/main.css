@@ -79,6 +79,7 @@ p {
     text-align: center;
     position: relative;
     z-index: 9999;
+    color: #e57a1b;
 }
 
 .accuracy {
@@ -95,6 +96,11 @@ p {
     align-items: center;
     justify-content: space-around;
 }
+
+.prediction-container {
+    bottom: 10%;
+}
+
 
 .main-title {
     font-family: 'MyCustomFont', sans-serif;

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <link rel="stylesheet" href="{% static 'main.css' %}"> <!-- Correct path to your CSS file -->
+    <title>Model Performance</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
 <img class="stars_background" src="{% static 'Stars-bg-desktop.svg' %}" alt="stars">
@@ -13,14 +13,17 @@
     <div class="flex-container model_testing_container">
         <div class="flex-container2">
             <div class="image-container">
+                <!--coded image for non-descriptive method -->
                 <img src="data:image/png;base64,{{ confusion_matrix_image }}" alt="Confusion Matrix">
-                <p> Confusion Matrx demonstrating the accuracy of the model against test data.</p>
+                <p> Confusion Matrix demonstrating the accuracy of the model against test data.</p>
             </div>
             <div class="image-container">
+                <!--pre-rendered image for descriptive method -->
                 <img src="{% static 'Histogram.png' %}" alt="Histogram">
                 <p> Histogram showing the distribution of the maximum and minimum diameter across the data set.</p>
             </div>
             <div class="image-container">
+                <!--pre-rendered image for descriptive method -->
                 <img src="{% static 'scatterPlot.png' %}" alt="Scatterplot">
                 <p> Scatterplot showing the correlation between the diameter of each NEO, and their velocity in the data set.</p>
             </div>
@@ -30,7 +33,7 @@
         <span></span>
 
         <h2>Model Accuracy</h2>
-        <p class="accuracy">The model is accuracy is being assessed based on the correct predictions from the test data passed in during training.
+        <p class="accuracy">The model accuracy is being assessed based on the correct predictions from the test data passed in during training.
             The model's accuracy is: {{ evaluation_results.Accuracy }}</p>
 
 

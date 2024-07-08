@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predict Hazardous Asteroids</title>
-    <link rel="stylesheet" href="{% static 'main.css' %}"> <!-- Correct path to your CSS file -->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
 <img class="stars_background" src="{% static 'Stars-bg-desktop.svg' %}" alt="stars">
 <div class="welcome_container">
-    <div class="flex-container">
+    <p>Asteroids are generally considered hazardous when they have a diameter that is above 1km and a velocity above 12-15 km/s. <br><br>
+    </p>
+    <div class="flex-container prediction-container">
         <h1>Predict Hazardous Asteroids</h1>
 
         <form method="post" action="{% url 'predictions' %}">
@@ -37,6 +39,10 @@
            <h2>Prediction Result: {{ prediction|first }}</h2>
         {% endif %}
 
+        {% if error %}
+           <h2>{{ error }}</h2>
+        {% endif %}
+
         <div class="flex-container2">
             <a href="{% url 'main' %}">Back to Main Page</a>
             <a href="{% url 'model_testing' %}">Model Accuracy and Visuals</a>
@@ -52,7 +58,7 @@
         <img class="Asteroid_3" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
         <img class="Asteroid_4" src="{% static 'asteroid-2-svgrepo-com.svg' %}" alt="Asteriod">
     </div>
-    <!-- <a href="{% url 'predictions' %}">Hello World!</a> -->
+
 </div>
 
 </body>

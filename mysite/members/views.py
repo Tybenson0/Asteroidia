@@ -1,31 +1,38 @@
+
+
+# “ The past is past, now, but that’s… you know,
+
+#    that’s okay! It’s never really gone completely.
+
+#       The future is always built on the past, even if we won’t get to see it. ” - Riebeck from Outer Wilds
+
+# https://www.youtube.com/watch?v=K1R9NA-cseY
+
+
 import base64
 import io
-import random
-
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from django.template import loader
 import requests
 from matplotlib import pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, \
-    ConfusionMatrixDisplay
-
+from sklearn.metrics import ConfusionMatrixDisplay
 from .RegressionModel import regressionModel, model_performance
 
-asteroids_neows = 'https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=kfoaNissh18rXuGll93dSPkfCfYoHxc1ibamSbci'
-model = regressionModel()
+asteroids_neows = 'https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=kfoaNissh18rXuGll93dSPkfCfYoHxc1ibamSbci'  # NASA NEOWs API
+model = regressionModel()  # Creating and training the logistic regression model
 
-
-# Create your views here.
-def predictions(request):
+def predictions(request):  # view for the predictions page
     if request.method == 'POST':
 
-        try:
+        try:  # captures the inputs from the user to pass to the model for testing
             estimated_diameter_min = float(request.POST['estimated_diameter_min'])
             estimated_diameter_max = float(request.POST['estimated_diameter_max'])
             closest_approach_velocity = float(request.POST['closest_approach_velocity'])
+            # validation to ensure the maximum is not below the minimum
+            if estimated_diameter_max <= estimated_diameter_min:
+                error_message = "Estimated Diameter Max must be greater than Estimated Diameter Min."
+                return render(request, 'prediction.html', {'error': error_message})
+            # 2D array of features to pass into the model
             test_data_features = [
                 [
                     estimated_diameter_min,
@@ -33,9 +40,9 @@ def predictions(request):
                     closest_approach_velocity
                 ]
             ]
-
+            # make the prediction
             prediction = model.predict(test_data_features)
-            # Return the prediction results to the template context
+            # return the prediction to the front end
             return render(request, 'prediction.html', {'prediction': prediction})
         except requests.exceptions.RequestException as e:
             return JsonResponse({'error': str(e)}, status=500)
@@ -45,10 +52,10 @@ def predictions(request):
 plt.switch_backend('agg')
 
 
-def model_testing(request):
+def model_testing(request):  # view for the visuals and the testing the model
     try:
         # Prepare evaluation results for display
-        evaluation_results = model_performance()
+        evaluation_results = model_performance(model)  # passes in the model and tests it against test data
 
         # Plot the confusion matrix
         fig, ax = plt.subplots()
@@ -73,6 +80,7 @@ def model_testing(request):
             'confusion_matrix_image': image_base64,
         }
 
+        # pass both to the front end
         return render(request, 'model_test.html', {
             'evaluation_results': evaluation_results,
             'confusion_matrix_image': image_base64
@@ -82,10 +90,11 @@ def model_testing(request):
         return render(request, 'error.html', {'error_message': str(e)})
 
 
-def main(request):
+def main(request):  # main page
     return render(request, 'main.html')
 
-def raw_data(request):
+
+def raw_data(request):  # requests data from the API and returns it as JSON
     response = requests.get(asteroids_neows)
 
     if response.status_code == 200:
