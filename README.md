@@ -139,33 +139,23 @@ Test out the code for yourself and leave any recomendations!
 <br />
 
 ## Machine Learning
-Asteroidia uses the Nasa Near Earth Objects Web Service and a supervised linear regression machine learning model in order to predict if an azteroid is hazardous based on features such as size and velocity.
-Asteroidia uses the scikit linear regression library along with various other libararies to split the NEOWs data into two different groups, testing and training. The groups receive sets of features and targets that 
-model will use to train test. The features are the components that the model uses to train and make predictions off of. Targets are dynamically assigned values that the model is using as the goal for its predictions
-and performance. The model then trains with the training set and tests itself with the test set and provides an accuracy metric based on the model correct hazard predictions based on the test data. This method of 
-training/testing allows us to train the model and test the model with similar data allowing for a reliable accuracy metric.
+Asteroidia utilizes the NASA Near Earth Objects Web Service and a supervised linear regression machine learning model to predict if an asteroid is hazardous based on features such as size and velocity. Asteroidia employs the scikit-learn linear regression library and other libraries to split the NEOWs data into training and testing groups. The training set provides features that the model uses for training and predicting, while targets are dynamically assigned values that serve as goals for the model's predictions and performance evaluation. The model trains on the training set and evaluates itself using the test set, providing an accuracy metric based on its correct hazard predictions against the test data. This training/testing approach ensures a reliable accuracy metric by using similar datasets for both training and testing.
 <br />
 <br />
 ## Validation  
-The model is trained and testes on the same data from the NASA NEOWs, but without duplication. The test data uses the exact same split between features and targets ensuring the datasets are very similar. The model 
-is then tested agains the test data and we define the accuracy metric as the amount of correct hazard predictions from the model on the test data; ensuring the model is working as intended. 
+The model is trained and tested on distinct, non-overlapping subsets of data from the NASA NEOWs. The test data maintains the exact split between features and targets as in the training data, ensuring similarity between datasets. The model is then evaluated against the test data to measure its accuracy in correctly predicting hazards, thus validating its performance.
 <br />
 <br />
 ## Solution Summary
-Humanity in recent years has advanced rapidly with technology, enabling the birth of television, computers, and interent. This also led to the need for near orbit satellites in order to have these services. Asteroids and other
-Near Earth Objects pose a great threat to Earth and her many space assets as colisions could disrupt communications across the world. ASTEROIDIA aims to remedy this by using a pre-existing database (NASA NEOWs) in order 
-to predict the potential severity of NEOs using machine learning algorithms to determine if an NEO is hazardous or not by certain traits they exhibit like size or velocity.
+In recent years, technological advancements have significantly progressed, giving rise to television, computers, and the internet, which necessitate near-orbit satellites to support these services. However, asteroids and other Near Earth Objects pose a significant threat to Earth and its space assets due to potential collisions that could disrupt global communications. ASTEROIDIA aims to address this challenge by leveraging the NASA NEOWs database to predict the potential hazard of NEOs using machine learning algorithms. These algorithms analyze traits such as size and velocity to determine if an NEO poses a hazard.
 <br />
 <br />
 ## Data Summary
-ASTEROIDIA is pulling from the NASA Near Earth Object Web Service(NASA NEOWs). The data consists of multiple already identifies NEO's and various traits associated with them. The data was pre-processed in order to extract
-details that will be useful for the model. The model uses some of theses traits as features for predictions, along with dynamically assigned targets for the model to attempt to predict.
+ASTEROIDIA retrieves data from the NASA Near Earth Object Web Service (NASA NEOWs), which contains detailed information on identified NEOs and their associated characteristics. The data undergoes preprocessing to extract relevant details essential for the model. Selected traits from this dataset serve as features for predictions, while dynamically assigned targets enable the model to predict hazards accurately.
 <br />
 <br />
 ## Visualizations
-The visualizations I chose to go with are a histogram, scatterplot, and confusion matric. The histogram is used to demonstrate the variance among the minimum and maximum diameters of NEO's provided in the dataset. The
-Scatterplot is used to show correlation between the minimum and maximum diameters of the NEO's along with their velocity in order to potentially extract patterns. The confusion matrix is used to show the accuacy of the model
-when it is run against the test data to describe the accuaracy of the model.
+The chosen visualizations include a histogram, scatter plot, and confusion matrix. The histogram illustrates the distribution of minimum and maximum diameters among NEOs in the dataset, highlighting their variability. The scatter plot displays correlations between the minimum and maximum diameters of NEOs and their velocities, aiming to uncover potential patterns. Lastly, the confusion matrix provides a clear depiction of the model's accuracy when tested against the validation data, offering insights into its performance.
 
 
 
