@@ -98,7 +98,7 @@ def model_performance():
 
     # Prepare evaluation results for display
     evaluation_results = {
-        'Accuracy': accuracy,
+        'Accuracy': f"{accuracy * 100:.2f}%",
         'Classification_Report': report,
         'Confusion_Matrix': matrix # Convert matrix to a nested list for JSON serialization
     }

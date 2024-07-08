@@ -61,6 +61,30 @@ input {
     height: 1.4rem;
 }
 
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.image-container {
+    height: 95%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+}
+
+.accuracy {
+    width: 35%;
+}
+
 .welcome_container {
     width: 100%;
     height: 100%;
@@ -103,6 +127,10 @@ h1 {
     gap: 1rem;
 }
 
+.model_testing_container {
+    width: 85%;
+}
+
 .button-container {
     margin-top: 0;
 }
@@ -137,7 +165,7 @@ h3 {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: start;
     position: absolute;
 }
@@ -154,11 +182,11 @@ h3 {
 }
 
 .Satellite {
-    width 3%;
-    height: 3%;
-    bottom: 32%;
-    left: 10%;
-    position: absolute;
+    width: 3vw;
+    height: 3vh;
+    bottom: 30%;
+    left: 15%;
+    position: relative;
     z-index: 3;
     animation: bobUpDown 10s infinite ease-in-out;
 }
