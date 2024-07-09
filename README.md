@@ -134,6 +134,10 @@ Test out the code for yourself and leave any recomendations!
 
 <br />
 <br />
+optional*.  You can uninstall the dependencies after you're done using the project
+  ```sh
+  pip uninstall django numpy pandas scikit-learn tensorflow keras matplotlib
+  ```
 
 
 
