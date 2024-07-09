@@ -80,6 +80,7 @@ p {
     position: relative;
     z-index: 9999;
     color: #e57a1b;
+    font-family: 'MyCustomFont', sans-serif;
 }
 
 .accuracy {
