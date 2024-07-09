@@ -81,6 +81,7 @@ p {
     z-index: 9999;
     color: #e57a1b;
     font-family: 'MyCustomFont', sans-serif;
+     font-size: 1.2rem;
 }
 
 .accuracy {
