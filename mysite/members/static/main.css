@@ -137,6 +137,7 @@ h1 {
 
 .model_testing_container {
     width: 85%;
+    bottom: 5%;
 }
 
 .button-container {
@@ -277,9 +278,9 @@ h3 {
 
 @keyframes arcLeftRight {
     0% {
-        transform: translateY(0) translateX(0); /* Start position, no translation */
+        transform: translateY(0) translateX(0) rotate(0deg); /* Start position, no translation */
     }
     100% {
-        transform: translateY(0) translateX(3300px); /* End position, back to start */
+        transform: translateY(0) translateX(3300px) rotate(360deg); /* End position, back to start */
     }
 }
