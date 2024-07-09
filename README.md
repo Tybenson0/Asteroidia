@@ -119,7 +119,7 @@ Test out the code for yourself and leave any recomendations!
   ```
   4*.  Install Dependencies
   ```sh
-  pip install django numpy pandas scikit-learn tensorflow keras matplotlib
+   pip install -r requirements.txt
   ```
   5*.  Run the App
   ```sh
