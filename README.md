@@ -31,6 +31,8 @@
     <br />
     <br />
     <a href="https://github.com/Tybenson0/Asteroidia/issues">Report Bug</a>
+    .
+    <a href="https://asteroidia.onrender.com/">View live site</a>
     ·
     <a href="https://github.com/Tybenson0/Asteroidia/pulls">Request Feature</a>
   </p>
