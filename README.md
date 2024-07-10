@@ -109,6 +109,8 @@ Test out the code for yourself and leave any recomendations!
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+You can view the live project at https://asteroidia.onrender.com/ or run it locally.
+
   1*.  open your IDE/code editor and open the terminal to location you wish to clone the project
   <br />
   <br />
