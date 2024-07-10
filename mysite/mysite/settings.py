@@ -114,10 +114,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CORS settings
-CORS_ALLOWED_ORIGINS = [
-    "https://asteroidia.onrender.com",
-]
+CSRF_TRUSTED_ORIGINS = ['https://asteroidia.onrender.com']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
