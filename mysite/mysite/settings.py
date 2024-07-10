@@ -117,7 +117,6 @@ STATIC_URL = '/static/'
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "https://asteroidia.onrender.com",
-    # Add other domains if needed
 ]
 
 # Default primary key field type
