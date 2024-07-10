@@ -23,6 +23,7 @@
 <div align="center">
 
   <h3 align="center">ASTEROIDIA</h3>
+    <img src="mysite/members/static/asteroid-2-svgrepo-com.svg" alt="Asteroid Image" width="75" height="75">
 
   <p align="center">
     Use machine learning to predict if an asteroid is hazardous or not!
