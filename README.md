@@ -32,13 +32,13 @@
     <br />
     <a href="https://github.com/Tybenson0/Asteroidia/issues">Report Bug</a>
     .
-    <a href="https://asteroidia.onrender.com/">View live site</a>
+    <a href="https://asteroidia.onrender.com">View live site</a>
     ·
     <a href="https://github.com/Tybenson0/Asteroidia/pulls">Request Feature</a>
   </p>
 </div>
 
-
+<p align="center">NOTE: The live site is hosted on render.com's free tier and therefore could take a minut to load</p>
 
 
 
@@ -99,6 +99,12 @@ ASTEROIDIA is a Django application...
 ## Getting Started
 
 Test out the code for yourself and leave any recomendations!
+
+OR 
+
+Check out the live site at https://asteroidia.onrender.com
+
+<p align="center">NOTE: The live site is hosted on render.com's free tier and therefore could take a minut to load</p>
 
 ### Prerequisites
 
